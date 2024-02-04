@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg text-uppercase sticky-top py-1 py-lg-3 px-2 px-lg-0 fw-bolder">
+<nav [ngClass]="{'py-1': isScrolled}" class="navbar navbar-expand-lg text-uppercase sticky-top px-2 px-lg-0 fw-bolder">
     <div class="container p-2">
         <a class="navbar-brand  text-white fs-2 " routerLink="home">Start Framework</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
