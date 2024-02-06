@@ -10,62 +10,13 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4 gx-5 gy-4">
+            <div class="col-lg-4 col-md-6 gx-5 gy-4" *ngFor="let imgSrc of imgArr; let i = index">
                 <div class="portfolio-item">
                     <figure>
-                        <img src="assets/port1.png" class="w-100 rounded" alt="port1">
+                        <img [src]="imgSrc" class="w-100 rounded" alt="portImg {{i+1}}'">
                     </figure>
-                    <div class="portfolio-item-layer rounded" data-bs-toggle="modal" data-bs-target="#Img1">
-                        <i class="fab fa-plus text-white"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gx-5 gy-4">
-                <div class="portfolio-item">
-                    <figure>
-                        <img src="assets/port2.png" class="w-100 rounded" alt="port2">
-                    </figure>
-                    <div class="portfolio-item-layer rounded" data-bs-toggle="modal" data-bs-target="#Img2">
-                        <i class="fab fa-plus text-white"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gx-5 gy-4">
-                <div class="portfolio-item">
-                    <figure>
-                        <img src="assets/port3.png" class="w-100 rounded" alt="port3">
-                    </figure>
-                    <div class="portfolio-item-layer rounded" data-bs-toggle="modal" data-bs-target="#Img3">
-                        <i class="fab fa-plus text-white"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gx-5 gy-4">
-                <div class="portfolio-item">
-                    <figure>
-                        <img src="assets/port1.png" class="w-100 rounded" alt="port1">
-                    </figure>
-                    <div class="portfolio-item-layer rounded" data-bs-toggle="modal" data-bs-target="#Img1">
-                        <i class="fab fa-plus text-white"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gx-5 gy-4">
-                <div class="portfolio-item">
-                    <figure>
-                        <img src="assets/port2.png" class="w-100 rounded" alt="port2">
-                    </figure>
-                    <div class="portfolio-item-layer rounded" data-bs-toggle="modal" data-bs-target="#Img2">
-                        <i class="fab fa-plus text-white"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 gx-5 gy-4">
-                <div class="portfolio-item">
-                    <figure>
-                        <img src="assets/port3.png" class="w-100 rounded" alt="port3">
-                    </figure>
-                    <div class="portfolio-item-layer rounded" data-bs-toggle="modal" data-bs-target="#Img3">
+                    <div (click)="showModal(imgSrc, i)" class="portfolio-item-layer rounded" data-bs-toggle="modal"
+                        data-bs-target="#ImgModal">
                         <i class="fab fa-plus text-white"></i>
                     </div>
                 </div>
@@ -74,38 +25,16 @@
     </div>
 </section>
 
-<!----------------------------------------- Models ----------------------------------------->
-<div class="modal fade" id="Img1" tabindex="-1" aria-hidden="true">
+<!----------------------------------------- Model ----------------------------------------->
+<div class="modal fade" id="ImgModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
+                <i (click)="prevModal()" class=" fa-solid fa-arrow-left text-white btn ms-1 fs-5 rounded-pill"></i>
                 <figure>
-                    <img src="assets/port1.png" class="w-100 rounded" alt="port1">
+                    <img [src]="imgSrc" class="w-100 rounded" [alt]="imgIndexAlt">
                 </figure>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="Img2" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <figure>
-                    <img src="assets/port2.png" class="w-100 rounded" alt="port2">
-                </figure>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="Img3" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <figure>
-                    <img src="assets/port3.png" class="w-100 rounded" alt="port3">
-                </figure>
+                <i (click)="nextModal()" class="fa-solid fa-arrow-right text-white btn me-1 fs-5 rounded-pill"></i>
             </div>
         </div>
     </div>

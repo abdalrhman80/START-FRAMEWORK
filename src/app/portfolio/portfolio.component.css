@@ -17,7 +17,7 @@ h2 {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    cursor: pointer;
+    cursor: zoom-in;
     transition: opacity .5s;
 }
 
@@ -29,7 +29,36 @@ h2 {
     opacity: 1;
 }
 
+.modal {
+    cursor: zoom-out;
+}
+
+.modal-body {
+    cursor: auto;
+}
+
 .modal-content {
     background-color: transparent;
     border: none;
+    transform: translateY(10%);
+}
+
+.modal-body img {
+    position: relative;
+}
+
+.modal-body i.fa-arrow-right,
+.modal-body i.fa-arrow-left {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-body i.fa-arrow-right {
+    right: 3%;
+}
+
+.modal-body i.fa-arrow-left {
+    left: 3%;
 }
