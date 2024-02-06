@@ -7,7 +7,7 @@ h2 {
 }
 
 .portfolio-item-layer {
-    background-color: var(--main-color);
+    background-color: #1abc9cd3;
     position: absolute;
     top: 0%;
     bottom: 0;
@@ -57,8 +57,20 @@ h2 {
 
 .modal-body i.fa-arrow-right {
     right: 3%;
+    margin-right: 5px;
 }
 
 .modal-body i.fa-arrow-left {
     left: 3%;
+    margin-left: 5px;
+}
+
+@media screen and (max-width:567px) {
+    .modal-body i.fa-arrow-right {
+        margin-right: 10px;
+    }
+
+    .modal-body i.fa-arrow-left {
+        margin-left: 10px;
+    }
 }
